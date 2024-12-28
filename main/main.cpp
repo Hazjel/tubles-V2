@@ -1,9 +1,7 @@
-#include <iostream>
+#include "relasi.h"
+#include "barang.h"
+#include "toko.h"
 
-using namespace std;
-
-int main()
-{
-    cout << "Hello world!" << endl;
-    return 0;
+int main() {
+    
 }
