@@ -23,7 +23,8 @@ void connect(list_r &L, listBarang Lb, listToko Lt, string B, string T) {
     if (P != NULL && Q != NULL) {
         adr_r R = allocate(P, Q);
         insertFirst(L, R);
-        
+    } else {
+        cout << "Data tidak ditemukan" << endl;
     }
 }
 
