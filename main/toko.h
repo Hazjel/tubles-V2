@@ -35,6 +35,7 @@ struct listToko {
 
 void createListToko(listToko &Lt);
 adrToko createElemenToko(infoToko X);
+bool isListTokoEmpty(listToko Lt);
 void insertFirstToko(listToko &Lt, adrToko P);
 void insertLastToko(listToko &Lt, adrToko P);
 adrToko findToko(listToko Lt, string x);

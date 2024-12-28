@@ -34,6 +34,7 @@ struct listBarang {
 
 void createListBarang(listBarang &Lb);
 adrBarang createElemenBarang(infoBarang X);
+bool isListBarangEmpty(listBarang Lb);
 void insertFirstBarang(listBarang &Lb, adrBarang P);
 void insertLastBarang(listBarang &Lb, adrBarang P);
 adrBarang findBarang(listBarang Lb, string x);

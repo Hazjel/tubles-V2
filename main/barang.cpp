@@ -18,6 +18,10 @@ adrBarang createElemenBarang(infoBarang X) {
     return p;
 }
 
+bool isListBarangEmpty(listBarang Lb) {
+    return firstB(Lb) == NULL;
+}
+
 void insertFirstBarang(listBarang &Lb, adrBarang P) {
     if (firstB(Lb) == NULL) {
         firstB(Lb) = P;

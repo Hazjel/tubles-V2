@@ -17,6 +17,10 @@ adrToko createElemenToko(infoToko X) {
     return p;
 }
 
+bool isListTokoEmpty(listToko Lt) {
+    return firstT(Lt) == NULL;
+}
+
 void insertFirstToko(listToko &Lt, adrToko P) {
     if (firstT(Lt) == NULL) {
         firstT(Lt) = P;
