@@ -1,12 +1,14 @@
 #include "relasi.h"
 #include "barang.h"
 #include "toko.h"
+#include "menu.h"
 
 int main() {
     listToko Lt;
     createListToko(Lt);
     adrToko p;
     infoToko Toko;
+    int nomor;
 
     listBarang Lb;
     createListBarang(Lb);
@@ -107,5 +109,42 @@ int main() {
     q = createElemenBarang(Barang);
     insertFirstBarang(Lb, q);
 
-    
+    while (nomor != 0) {
+        nomor = menu();
+        switch (nomor) {
+            case 1:
+                inputData(Lb, Lt);
+                break;
+            case 2:
+                deleteParent(Lt, Lr);
+                break;
+            case 3:
+                deleteChild(Lr);
+                break;
+            case 4:
+                connectData(Lb, Lt, Lr);
+                break;
+            case 5:
+                searchBarang(Lb);
+                break;
+            case 6:
+                searchToko(Lt);
+                break;
+            case 7:
+                sumBarangFromToko(Lr);
+                break;
+            case 8:
+                printBarangFromToko(Lr);
+                break;
+            case 9:
+                deleteChild(Lr);
+                break;
+            case 10:
+                sumBarangFromToko(Lr);
+                break;
+            case 0:
+                cout << "Terima kasih" << endl;
+                break;
+        }
+    }
 }

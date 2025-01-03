@@ -30,6 +30,8 @@ adr_r allocate(adrBarang B, adrToko T);
 void insertFirst(list_r &L, adr_r p);
 void deleteElm(list_r &L, adr_r &p);
 adr_r findElm(list_r L, adrBarang B, adrToko T);
+adr_r findElmByInfo(list_r L, string T, string B);
 void connect(list_r &L, listBarang lb, listToko lt, string B, string T);
+void printRelasi(list_r L, listToko Lt);
 
 #endif // RELASI_H_INCLUDED

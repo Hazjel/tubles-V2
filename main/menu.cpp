@@ -27,10 +27,6 @@ infoBarang inputBarang() {
     cin >> X.deskripsi;
     cout << "Harga : ";
     cin >> X.harga;
-    cout << "Stok : ";
-    cin >> X.stok;
-    cout << "Jumlah : ";
-    cin >> X.jumlah;
 
     return X;
 }
@@ -101,4 +97,68 @@ void connectData(listBarang Lb, listToko Lt, list_r &L) {
     cin >> T;
 
     connect(L, Lb, Lt, B, T);
+}
+
+void sumBarangFromToko(list_r L) {
+    string x;
+    cout << "Masukkan nama toko yang ingin dihitung : ";
+    cin >> x;
+    adrBarang B;
+    adr_r P = first(L);
+    int sum = 0;
+    while (P != NULL) {
+        if (infoT(toko(P)).namaToko == x) {
+            B = P->barang;
+            sum++;
+        }
+        P = next(P);
+    }
+    cout << "Jumlah barang pada toko " << x << " adalah " << sum << endl;
+}
+
+void printBarangFromToko(list_r L, string nama) {
+    cout << "Nama barang: ";
+    cin >> nama;
+    adr_r P = first(L);
+    if (P != NULL) {
+        while (P != NULL) {
+            if (infoB(barang(P)).namaBarang == nama) {
+                cout << "Nama Toko: " << infoT(toko(P)).namaToko << endl;
+            }
+            P = next(P);
+        }
+    } else {
+        cout << "Data tidak ditemukan" << endl;
+    }
+}
+
+void deleteParent(listToko &Lt, list_r &L) {
+    string namaToko;
+    cout << "Nama Toko yang ingin dihapus: ";
+    cin >> namaToko;
+    adrToko P = findToko(Lt, namaToko);
+    adr_r Q, K;
+    Q = first(L);
+    while (Q != first(L)) {
+        if (toko(Q) == P) {
+            deleteElm(L, K);
+        } 
+        Q = next(Q);
+    }
+}
+
+void deleteChild(list_r &L) {
+    string namaBarang, namaToko;
+    cout << "Nama Toko: ";
+    cin >> namaToko;
+    printBarangFromToko(L, namaToko);
+    cout << "Nama Barang yang mau dihapus: ";
+    cin >> namaBarang;
+    adr_r P = findElmByInfo(L, namaToko, namaBarang);
+    if (P != NULL) {
+        deleteElm(L, P);
+        cout << "Data berhasil dihapus" << endl;
+    } else {
+        cout << "Data tidak ditemukan" << endl;
+    }
 }

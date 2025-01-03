@@ -65,13 +65,44 @@ adr_r findElm(list_r L, adrBarang B, adrToko T) {
         while (next(P) != NULL && (barang(P) != B || toko(P) != T)) {
             P = next(P);
         }
+
         if (barang(P) == B && toko(P) == T) {
             return P;
-        } else {
-            return NULL;
-        }
-    } else {
-        return NULL;
+        } 
     }
 }
 
+adr_r findElmByInfo(list_r L, string T, string B) {
+    adr_r P = first(L);
+    int i = 1;
+    if (P != NULL) {
+        while (P != NULL) {
+            if (infoT(toko(P)).namaToko == T && infoB(barang(P)).namaBarang == B) {
+                return P;
+            }
+            P = next(P);
+        }
+    }
+    return NULL;
+}
+
+void printRelasi(list_r L, listToko Lt) {
+    adrToko P = firstT(Lt);
+    
+    cout << "Print Relasi" << endl;
+    while (P != NULL) {
+        cout << "Toko: " << infoT(P).namaToko << "->";
+        adr_r Q = first(L);
+        if (Q != NULL) {
+            while (Q != first(L)) {
+                if (infoT(toko(Q)).namaToko == infoT(P).namaToko) {
+                    cout << infoB(barang(Q)).namaBarang << " ";
+                }
+                Q = next(Q);
+            }
+        }
+        cout << endl;
+        P = nextT(P);
+    }
+    cout << endl;
+}
