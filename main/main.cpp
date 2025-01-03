@@ -9,6 +9,7 @@ int main() {
     adrToko p;
     infoToko Toko;
     int nomor;
+    string x;
 
     listBarang Lb;
     createListBarang(Lb);
@@ -109,42 +110,46 @@ int main() {
     q = createElemenBarang(Barang);
     insertFirstBarang(Lb, q);
 
-    while (nomor != 0) {
-        nomor = menu();
+    do {
+        menu();
+        cout << "Masukkan nomor menu: ";
+        cin >> nomor;
         switch (nomor) {
             case 1:
                 inputData(Lb, Lt);
                 break;
             case 2:
-                deleteParent(Lt, Lr);
+                printListToko(Lt);
                 break;
             case 3:
-                deleteChild(Lr);
+                deleteParent(Lt, Lr);
                 break;
             case 4:
-                connectData(Lb, Lt, Lr);
+                searchToko(Lt);
                 break;
             case 5:
                 searchBarang(Lb);
                 break;
             case 6:
-                searchToko(Lt);
+                connectData(Lb, Lt, Lr);
                 break;
             case 7:
-                sumBarangFromToko(Lr);
+               printRelasi(Lr, Lt);
                 break;
             case 8:
-                printBarangFromToko(Lr);
+                printBarangFromToko(Lr, x);
                 break;
             case 9:
                 deleteChild(Lr);
                 break;
             case 10:
+                cout << "Masukkan nama toko yang ingin dihitung : ";
+                cin >> x;
                 sumBarangFromToko(Lr);
                 break;
             case 0:
                 cout << "Terima kasih" << endl;
                 break;
         }
-    }
+    } while (nomor != 0);
 }

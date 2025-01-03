@@ -8,7 +8,7 @@
 
 using namespace std;
 
-int menu();
+void menu();
 void inputData(listBarang &Lb, listToko &Lt);
 infoBarang inputBarang();
 infoToko inputToko();
@@ -18,7 +18,7 @@ void connectData(listBarang Lb, listToko Lt, list_r &L);
 void searchBarang(listBarang Lb);
 void searchToko(listToko Lt);
 void sumBarangFromToko(list_r L);
-void printBarangFromToko(list_r L);
+void printBarangFromToko(list_r L, string nama);
 void printRelasi(list_r L, listToko Lt);
 
 #endif // MENU_H_INCLUDED

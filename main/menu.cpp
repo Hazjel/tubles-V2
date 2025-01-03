@@ -2,7 +2,7 @@
 #include "barang.h"
 #include "relasi.h"
 
-int menu() {
+void menu() {
     cout << "Menu" << endl;
     cout << "1.  Input Data" << endl;
     cout << "2.  Tampilkan Semua Data toko" << endl;
@@ -55,18 +55,17 @@ void inputData(listBarang &Lb, listToko &Lt) {
     cout << "Data apa yang ingin dimasukkan? (barang/toko)" << endl;
     cin >> data;
 
-    X = inputBarang();
-    P = createElemenBarang(X);
-    Y = inputToko();
-    Q = createElemenToko(Y);
-
     if (data == "barang") {
+        X = inputBarang();
+        P = createElemenBarang(X);
         if (isListBarangEmpty(Lb)) {
             insertFirstBarang(Lb, P);
         } else {
             insertLastBarang(Lb, P);
         }
     } else if (data == "toko") {
+        Y = inputToko();
+        Q = createElemenToko(Y);
         if (isListTokoEmpty(Lt)) {
             insertFirstToko(Lt, Q);
         } else {

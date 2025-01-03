@@ -74,14 +74,18 @@ void printInfoToko(listToko Lt, string x) {
 }
 
 void printListToko(listToko Lt) {
+    int i = 1;
     adrToko p = firstT(Lt);
-    cout << "List Toko yang Tersedia : " << endl;
-    while (p != NULL) {
-        cout << "Nama Toko : " << infoT(p).namaToko << endl;
-        cout << "ID Toko   : " << infoT(p).IDtoko << endl;
-        cout << "Alamat    : " << infoT(p).alamat << endl;
-        cout << "Kontak    : " << infoT(p).kontak << endl;
-        p = nextT(p);
+    
+    if (firstT(Lt) == NULL) {
+        cout << "List Toko Kosong" << endl;
+    } else {
+        cout << "List Toko :" << endl;
+        while (p != NULL) {
+            cout << i << ". " << infoT(p).namaToko << endl;
+            p = nextT(p);
+            i++;
+        }
     }
 }
 
