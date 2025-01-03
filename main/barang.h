@@ -9,8 +9,6 @@ using namespace std;
 #define nextB(L) L->nextB
 #define infoB(L) L->infoB
 
-typedef struct barang *adrBarang;
-
 struct barang {
     string IDbarang;
     string namaBarang;
@@ -18,13 +16,14 @@ struct barang {
     string harga;
 };
 
+typedef barang infoBarang;
+
+typedef struct elmListBarang *adrBarang;
+
 struct elmListBarang {
     infoBarang infoB;
     adrBarang nextB;
 };
-
-typedef barang infoBarang;
-typedef struct elmListBarang *adrBarang;
 
 struct listBarang {
     adrBarang firstB;
