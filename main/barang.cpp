@@ -12,8 +12,6 @@ adrBarang createElemenBarang(infoBarang X) {
     infoB(p).IDbarang = X.IDbarang;
     infoB(p).deskripsi = X.deskripsi;
     infoB(p).harga = X.harga;
-    infoB(p).jumlah = X.jumlah;
-    infoB(p).stok = X.stok;
 
     return p;
 }
@@ -63,8 +61,6 @@ void printInfobarang(listBarang Lb, string x) {
         cout << infoB(p).namaBarang << endl;
         cout << infoB(p).deskripsi << endl;
         cout << infoB(p).harga << endl;
-        cout << infoB(p).stok << endl;
-        cout << infoB(p).jumlah << endl;
     } else {
         cout << "Barang tidak tersedia" << endl;
     }

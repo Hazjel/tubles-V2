@@ -16,8 +16,6 @@ struct barang {
     string namaBarang;
     string deskripsi;
     string harga;
-    int stok;
-    int jumlah;
 };
 
 struct elmListBarang {
