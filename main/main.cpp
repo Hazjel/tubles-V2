@@ -20,28 +20,28 @@ int main() {
     createList(Lr);
 
     Toko.IDtoko = "1";
-    Toko.namaToko = "Sumber Jaya";
-    Toko.alamat = "Jl. Sukajadi";
+    Toko.namaToko = "SumberJaya";
+    Toko.alamat = "Jl.Sukajadi";
     Toko.kontak = "103921";
     p = createElemenToko(Toko);
     insertFirstToko(Lt, p);
 
     Toko.IDtoko = "2";
-    Toko.namaToko = "Sumber Makmur";
-    Toko.alamat = "Jl. Hamjel";
+    Toko.namaToko = "SumberMakmur";
+    Toko.alamat = "Jl.Hamjel";
     Toko.kontak = "109843";
     p = createElemenToko(Toko);
     insertFirstToko(Lt, p);
 
     Toko.IDtoko = "3";
-    Toko.namaToko = "Sumber Adil";
-    Toko.alamat = "Jl. Mimkel";
+    Toko.namaToko = "SumberAdil";
+    Toko.alamat = "Jl.Mimkel";
     Toko.kontak = "107856";
     p = createElemenToko(Toko);
     insertFirstToko(Lt, p);
 
     Barang.IDbarang = "01";
-    Barang.namaBarang = "Hello Pandi";
+    Barang.namaBarang = "HelloPandi";
     Barang.deskripsi = "Cemilan";
     Barang.harga = "10500";
     q = createElemenBarang(Barang);
@@ -55,7 +55,7 @@ int main() {
     insertFirstBarang(Lb, q);
 
     Barang.IDbarang = "03";
-    Barang.namaBarang = "Kapal Karam";
+    Barang.namaBarang = "KapalKaram";
     Barang.deskripsi = "Kopi";
     Barang.harga = "5500";
     q = createElemenBarang(Barang);
@@ -98,7 +98,7 @@ int main() {
 
     Barang.IDbarang = "09";
     Barang.namaBarang = "Popsodent";
-    Barang.deskripsi = "Pasta Gigi";
+    Barang.deskripsi = "PastaGigi";
     Barang.harga = "8000";
     q = createElemenBarang(Barang);
     insertFirstBarang(Lb, q);

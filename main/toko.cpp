@@ -14,6 +14,8 @@ adrToko createElemenToko(infoToko X) {
     infoT(p).alamat = X.alamat;
     infoT(p).kontak = X.kontak;
 
+    nextT(p) = NULL;
+    prevT(p) = NULL;
     return p;
 }
 
@@ -76,7 +78,7 @@ void printInfoToko(listToko Lt, string x) {
 void printListToko(listToko Lt) {
     int i = 1;
     adrToko p = firstT(Lt);
-    
+
     if (firstT(Lt) == NULL) {
         cout << "List Toko Kosong" << endl;
     } else {
