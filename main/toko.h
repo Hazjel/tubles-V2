@@ -9,8 +9,6 @@
 #define infoT(P) P->infoT
 using namespace std;
 
-typedef struct toko *adrToko;
-
 struct toko {
     string IDtoko;
     string namaToko;
@@ -19,7 +17,8 @@ struct toko {
 
 };
 
-typedef toko infoToko;
+typedef struct toko infoToko;
+
 typedef struct elmListToko *adrToko;
 
 struct elmListToko {
